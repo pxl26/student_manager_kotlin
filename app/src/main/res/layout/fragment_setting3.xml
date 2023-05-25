@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/tv_addSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+
+        android:text="Thêm môn học"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addSubject"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="10sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:inputType="text"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_addSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_addSubject" />
+
+    <TextView
+        android:id="@+id/tv_deleteSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Xóa môn học"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_addSubject"
+        app:layout_constraintTop_toBottomOf="@+id/tv_addSubject" />
+
+    <Spinner
+        android:id="@+id/deleteSubject"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:spinnerMode="dropdown"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_deleteSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_deleteSubject" />
+
+    <TextView
+        android:id="@+id/tv_className"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Thay đổi tên môn học"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_deleteSubject"
+        app:layout_constraintTop_toBottomOf="@+id/tv_deleteSubject" />
+
+    <Spinner
+        android:id="@+id/subject_oldName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:spinnerMode="dropdown"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_className"
+        app:layout_constraintTop_toBottomOf="@+id/tv_className" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:src="@drawable/baseline_navigate_next_24"
+        app:layout_constraintBottom_toBottomOf="@+id/subject_newName"
+        app:layout_constraintEnd_toStartOf="@+id/subject_newName"
+        app:layout_constraintTop_toTopOf="@+id/subject_newName" />
+
+    <EditText
+        android:id="@+id/subject_newName"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="10sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/subject_oldName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/barrier2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_className" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting3_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40sp"
+        android:padding="10sp"
+
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/complete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject_oldName" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_deleteSubject,tv_addSubject,subject_oldName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

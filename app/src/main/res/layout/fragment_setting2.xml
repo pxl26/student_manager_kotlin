@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_classMaxSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+
+        android:text="Sĩ số tối đa của lớp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/classMaxSize"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="10sp"
+        android:elevation="2sp"
+
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_bg"
+        android:textColor="@color/black"
+        android:inputType="number"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_classMaxSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_classMaxSize" />
+
+    <TextView
+        android:id="@+id/tv_addClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Thêm lớp học"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_classMaxSize"
+        app:layout_constraintTop_toBottomOf="@+id/tv_classMaxSize" />
+
+    <EditText
+        android:id="@+id/addClass"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="10sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:inputType="text"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_addClass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_addClass" />
+
+    <TextView
+        android:id="@+id/tv_deleteClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Xóa lớp học"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_addClass"
+        app:layout_constraintTop_toBottomOf="@+id/tv_addClass" />
+
+    <Spinner
+        android:id="@+id/deleteClass"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:spinnerMode="dropdown"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_deleteClass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_deleteClass" />
+
+    <TextView
+        android:id="@+id/tv_className"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Thay đổi tên lớp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+
+        app:layout_constraintStart_toStartOf="@+id/tv_deleteClass"
+        app:layout_constraintTop_toBottomOf="@+id/tv_deleteClass" />
+
+    <Spinner
+        android:id="@+id/class_oldName"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:spinnerMode="dropdown"
+
+        app:layout_constraintEnd_toEndOf="@+id/tv_className"
+        app:layout_constraintStart_toStartOf="@+id/tv_className"
+        app:layout_constraintTop_toBottomOf="@+id/tv_className" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_navigate_next_24"
+        app:layout_constraintBottom_toBottomOf="@+id/class_newName"
+        app:layout_constraintEnd_toStartOf="@+id/class_newName"
+        app:layout_constraintStart_toEndOf="@+id/class_oldName"
+        app:layout_constraintTop_toTopOf="@+id/class_newName" />
+
+    <EditText
+        android:id="@+id/class_newName"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+
+        android:padding="10sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/class_oldName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/barrier2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_className" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting2_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40sp"
+        android:padding="10sp"
+
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/complete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_oldName" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_classMaxSize,tv_deleteClass,tv_addClass" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

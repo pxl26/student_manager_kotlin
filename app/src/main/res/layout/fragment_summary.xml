@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.transcript.TranscriptFragment">
+
+    <TextView
+        android:id="@+id/tvSubjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:layout_marginTop="15sp"
+
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/subject"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_subject"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20sp"
+        android:layout_marginStart="20sp"
+        android:padding="5sp"
+
+        android:contentDescription="@string/choose_subject"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/edit_text_bg"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tvSubjectName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintTop_toTopOf="@+id/tvSubjectName" />
+
+
+    <TextView
+        android:id="@+id/tvSemester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:layout_marginTop="20sp"
+
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="italic"
+        android:text="@string/semester"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+
+        app:layout_constraintStart_toStartOf="@+id/tvSubjectName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubjectName" />
+
+    <Spinner
+        android:id="@+id/spinner_semester"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20sp"
+        android:layout_marginStart="20sp"
+        android:padding="5sp"
+
+        android:contentDescription="@string/choose_semester"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/edit_text_bg"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tvSemester"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintTop_toTopOf="@+id/tvSemester" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/see_summary_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Xem báo cáo"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_semester" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transcript_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginTop="20sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvSubjectName"
+        app:layout_constraintTop_toBottomOf="@+id/see_summary_btn" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tvSubjectName,tvSemester" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

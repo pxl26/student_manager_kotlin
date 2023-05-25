@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_student"
+            android:icon="@drawable/baseline_person_black"
+            android:title="Hồ sơ học sinh" />
+        <item
+            android:id="@+id/nav_class"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/menu_class" />
+        <item
+            android:id="@+id/nav_transcript"
+            android:icon="@drawable/baseline_description_24"
+            android:title="@string/menu_transcript" />
+        <item
+            android:id="@+id/nav_summary"
+            android:icon="@drawable/baseline_folder_24"
+            android:title="@string/menu_summary" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/baseline_search_24"
+            android:title="@string/search" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/baseline_settings_24"
+            android:title="@string/menu_setting"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logOut"
+            android:icon="@drawable/baseline_logout_24" />
+
+    </group>
+</menu>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_student">
+
+    <fragment
+        android:id="@+id/nav_class"
+        android:name="com.udemy.studentmanagement.ui.classroom.ClassFragment"
+        android:label="@string/menu_class"
+        tools:layout="@layout/fragment_class" >
+        <action
+            android:id="@+id/action_nav_class_to_classInfoFragment"
+            app:destination="@id/nav_class_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_class_info"
+        android:name="com.udemy.studentmanagement.ui.classroom.ClassInfoFragment"
+        android:label="Thông tin lớp học"
+        tools:layout="@layout/fragment_class_info">
+        <action
+            android:id="@+id/action_nav_class_info_to_addStudentToClassFragment"
+            app:destination="@id/nav_add_student_to_class" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_student_to_class"
+        android:name="com.udemy.studentmanagement.ui.classroom.AddStudentToClassFragment"
+        android:label="Thêm học sinh"
+        tools:layout="@layout/fragment_add_student_to_class" />
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_transcript"
+        android:name="com.udemy.studentmanagement.ui.transcript.TranscriptFragment"
+        android:label="@string/menu_transcript"
+        tools:layout="@layout/fragment_transcript" >
+        <action
+            android:id="@+id/action_nav_transcript_to_transcriptEditFragment"
+            app:destination="@id/transcriptEditFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_summary"
+        android:name="com.udemy.studentmanagement.ui.summary.SummaryFragment"
+        android:label="@string/menu_summary"
+        tools:layout="@layout/fragment_summary" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.udemy.studentmanagement.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.udemy.studentmanagement.ui.setting.SettingFragment"
+        android:label="@string/menu_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_nav_setting_to_setting1Fragment"
+            app:destination="@id/setting1Fragment" />
+        <action
+            android:id="@+id/action_nav_setting_to_setting2Fragment"
+            app:destination="@id/setting2Fragment" />
+        <action
+            android:id="@+id/action_nav_setting_to_setting3Fragment"
+            app:destination="@id/setting3Fragment" />
+        <action
+            android:id="@+id/action_nav_setting_to_setting4Fragment"
+            app:destination="@id/setting4Fragment" />
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_student"
+        android:name="com.udemy.studentmanagement.ui.student.StudentFragment"
+        android:label="Hồ sơ học sinh"
+        tools:layout="@layout/fragment_student" >
+        <action
+            android:id="@+id/action_nav_student_to_nav_student_info"
+            app:destination="@id/nav_student_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_student_info"
+        android:name="com.udemy.studentmanagement.ui.student.StudentInfoFragment"
+        android:label="Thông tin học sinh"
+        tools:layout="@layout/fragment_student_info">
+    </fragment>
+
+    <fragment
+        android:id="@+id/transcriptEditFragment"
+        android:name="com.udemy.studentmanagement.ui.transcript.TranscriptEditFragment"
+        android:label="Bảng điểm học sinh"
+        tools:layout="@layout/fragment_transcript_edit"/>
+
+    <fragment
+        android:id="@+id/setting1Fragment"
+        android:name="com.udemy.studentmanagement.ui.setting.Setting1Fragment"
+        android:label="Quy định 1"
+        tools:layout="@layout/fragment_setting1"/>
+    <fragment
+        android:id="@+id/setting2Fragment"
+        android:name="com.udemy.studentmanagement.ui.setting.Setting2Fragment"
+        android:label="Quy định 2"
+        tools:layout="@layout/fragment_setting2"/>
+    <fragment
+        android:id="@+id/setting3Fragment"
+        android:name="com.udemy.studentmanagement.ui.setting.Setting3Fragment"
+        android:label="Quy định 3"
+        tools:layout="@layout/fragment_setting3"/>
+    <fragment
+        android:id="@+id/setting4Fragment"
+        android:name="com.udemy.studentmanagement.ui.setting.Setting4Fragment"
+        android:label="Quy định 4"
+        tools:layout="@layout/fragment_setting4"/>
+
+
+</navigation>

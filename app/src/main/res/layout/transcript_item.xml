@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3sp"
+    android:layout_marginEnd="3sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transcript_item"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="1sp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingBottom="15sp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/transcript_studentAvt"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_avatar"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/transcript_studentOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20sp"
+            android:background="@drawable/class_name_background"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="10sp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/transcript_studentAvt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/transcript_studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+
+            android:fontFamily="@font/roboto_medium"
+            android:text="Le Thua Phuong Cat"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            app:layout_constraintStart_toEndOf="@+id/transcript_studentAvt"
+            app:layout_constraintTop_toTopOf="@+id/transcript_studentAvt" />
+
+        <TextView
+            android:id="@+id/transcript_studentID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+
+            android:fontFamily="@font/roboto_medium"
+            android:text="20120256"
+            android:textColor="@color/medium_black"
+            android:textSize="14sp"
+
+            app:layout_constraintStart_toStartOf="@+id/transcript_studentName"
+            app:layout_constraintTop_toBottomOf="@+id/transcript_studentName" />
+
+        <View
+            android:id="@+id/separate_line"
+            android:layout_width="0sp"
+            android:layout_height="1sp"
+            android:layout_marginTop="10sp"
+
+            android:background="@color/transparent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transcript_studentAvt" />
+
+        <TextView
+            android:id="@+id/tv_transcriptGrade15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="20sp"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/grade15"
+            android:textColor="@color/black"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separate_line" />
+
+        <TextView
+            android:id="@+id/tv_transcriptGrade45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/grade45"
+            android:textColor="@color/black"
+
+            app:layout_constraintEnd_toStartOf="@+id/tv_transcriptSemesterGrade"
+            app:layout_constraintStart_toEndOf="@+id/tv_transcriptGrade15"
+            app:layout_constraintTop_toTopOf="@+id/tv_transcriptGrade15" />
+
+        <TextView
+            android:id="@+id/tv_transcriptSemesterGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/semesterGrade"
+            android:textColor="@color/black"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_transcriptGrade15" />
+
+        <TextView
+            android:id="@+id/transcript_grade15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+
+            android:fontFamily="@font/roboto_bold"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/tv_transcriptGrade15"
+            app:layout_constraintStart_toStartOf="@+id/tv_transcriptGrade15"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transcriptGrade15" />
+
+        <TextView
+            android:id="@+id/transcript_grade45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+
+            android:fontFamily="@font/roboto_bold"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/tv_transcriptGrade45"
+            app:layout_constraintStart_toStartOf="@+id/tv_transcriptGrade45"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transcriptGrade45" />
+
+        <TextView
+            android:id="@+id/transcript_semesterGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+
+            android:fontFamily="@font/roboto_bold"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/tv_transcriptSemesterGrade"
+            app:layout_constraintStart_toStartOf="@+id/tv_transcriptSemesterGrade"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transcriptSemesterGrade" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

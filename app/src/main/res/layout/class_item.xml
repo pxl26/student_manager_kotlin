@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/class_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="5sp"
+    app:cardCornerRadius="20sp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:padding="15sp"
+
+            android:fontFamily="@font/roboto_medium"
+            android:text="12A1"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:background="@drawable/class_name_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="50sp"
+            android:layout_height="100sp"
+
+            android:src="@drawable/baseline_navigate_next_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_classAttendants"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="5sp"
+
+            android:src="@drawable/baseline_person_24"
+
+            app:layout_constraintEnd_toStartOf="@+id/class_attendants"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/class_attendants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="20"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/icon_classAttendants"
+            app:layout_constraintStart_toStartOf="@+id/class_teacher"
+            app:layout_constraintTop_toTopOf="@+id/icon_classAttendants" />
+
+        <ImageView
+            android:id="@+id/icon_classTeacher"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="5sp"
+
+            android:src="@drawable/baseline_teacher_24"
+
+            app:layout_constraintEnd_toStartOf="@+id/class_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/icon_classAttendants" />
+
+        <TextView
+            android:id="@+id/class_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="Steve Jobs"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/icon_classTeacher"
+            app:layout_constraintEnd_toStartOf="@+id/next_btn"
+            app:layout_constraintTop_toTopOf="@+id/icon_classTeacher" />
+
+        <ImageView
+            android:id="@+id/icon_classSemester"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="5sp"
+
+            android:src="@drawable/baseline_semester_24"
+
+            app:layout_constraintEnd_toStartOf="@+id/class_semester"
+            app:layout_constraintTop_toBottomOf="@+id/icon_classTeacher" />
+
+        <TextView
+            android:id="@+id/class_semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/roboto_regular"
+            android:text="2023-2026"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/icon_classSemester"
+            app:layout_constraintStart_toStartOf="@+id/class_teacher"
+            app:layout_constraintTop_toTopOf="@+id/icon_classSemester" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

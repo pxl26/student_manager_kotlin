@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1047456166058",
+    "project_id": "student-management-bb0b1",
+    "storage_bucket": "student-management-bb0b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047456166058:android:6ca1e8a0ad4b1645cce0d3",
+        "android_client_info": {
+          "package_name": "com.udemy.studentmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047456166058-bornncqck22kjq9jir6p0195g9j21stt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHbXG9yDQfCZqvuHl9CBj6VxbX5OdWelI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047456166058-bornncqck22kjq9jir6p0195g9j21stt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

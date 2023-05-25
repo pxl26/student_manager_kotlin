@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/main_color_blue">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_Avt"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginStart="10sp"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_avatar"
+        app:shapeAppearanceOverlay="@style/circle"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+
+        android:fontFamily="@font/roboto_medium"
+        android:text="Welcome!"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+
+        app:layout_constraintStart_toStartOf="@+id/user_Avt"
+        app:layout_constraintTop_toBottomOf="@+id/user_Avt" />
+
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+
+        android:text="Le Thua Phuong Cat"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white">
+
+<ImageView
+    android:id="@+id/app_icon"
+    android:layout_width="150sp"
+    android:layout_height="150sp"
+    android:layout_marginTop="20sp"
+
+    android:src="@drawable/icon"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/tv_describe"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:fontFamily="@font/roboto_bold"
+    android:text="@string/app_name"
+    android:textColor="@color/main_color_blue"
+    android:textSize="25sp"
+
+    app:layout_constraintEnd_toEndOf="@+id/app_icon"
+    app:layout_constraintStart_toStartOf="@+id/app_icon"
+    app:layout_constraintTop_toBottomOf="@+id/app_icon" />
+
+<EditText
+    android:id="@+id/login_email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50sp"
+    android:layout_marginStart="20sp"
+    android:layout_marginEnd="20sp"
+    android:elevation="2sp"
+
+    android:drawableStart="@drawable/baseline_email_24"
+    android:drawablePadding="7sp"
+    android:background="@drawable/edit_text_bg"
+    android:fontFamily="@font/roboto_medium"
+    android:hint="@string/hint_email_login"
+    android:inputType="textEmailAddress"
+    android:padding="10sp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/light_black"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_describe" />
+
+<EditText
+    android:id="@+id/login_password"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30sp"
+    android:layout_marginEnd="20sp"
+    android:layout_marginStart="20sp"
+    android:elevation="2sp"
+
+    android:drawableStart="@drawable/baseline_lock_24"
+    android:drawablePadding="7sp"
+    android:background="@drawable/edit_text_bg"
+    android:fontFamily="@font/roboto_medium"
+    android:hint="@string/hint_password"
+    android:inputType="textPassword"
+    android:padding="10sp"
+    android:textColor="@color/black"
+    android:textColorHint="@color/light_black"
+
+    app:layout_constraintEnd_toEndOf="@+id/login_email"
+    app:layout_constraintStart_toStartOf="@+id/login_email"
+    app:layout_constraintTop_toBottomOf="@+id/login_email" />
+
+<TextView
+    android:id="@+id/tv_forgetPassword"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="15sp"
+
+    android:fontFamily="@font/roboto_bold"
+    android:text="Quên mật khẩu ?"
+    android:textColor="@color/main_color_blue"
+    android:textSize="14sp"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/login_password" />
+
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/btn_login"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="20sp"
+
+    android:background="@drawable/button_bg"
+    android:fontFamily="@font/roboto_medium"
+    android:text="@string/login"
+    android:textColor="@color/white"
+    android:textSize="15sp"
+    android:textAllCaps="false"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_forgetPassword" />
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+
+    android:fontFamily="@font/roboto_medium"
+    android:text="Đã có tài khoản?"
+    android:textColor="@color/medium_black"
+    android:textSize="14sp"
+
+    app:layout_constraintEnd_toEndOf="@+id/btn_login"
+    app:layout_constraintHorizontal_bias="0.3"
+    app:layout_constraintStart_toStartOf="@+id/btn_login"
+    app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+<TextView
+    android:id="@+id/tv_signup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5sp"
+
+    android:clickable="true"
+    android:fontFamily="@font/roboto_bold"
+    android:text="@string/sign_up"
+    android:textColor="@color/main_color_blue"
+    android:textSize="14sp"
+
+    app:layout_constraintBottom_toBottomOf="@+id/textView2"
+    app:layout_constraintStart_toEndOf="@+id/textView2"
+    app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

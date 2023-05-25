@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_studentMaxAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+
+        android:text="@string/tvStudentMaxAge"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/studentMaxAge"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_bg"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_studentMaxAge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_studentMaxAge" />
+
+    <TextView
+        android:id="@+id/tv_studentMinAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+
+        android:text="Tuổi tối thiểu để đăng ký : "
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_studentMaxAge"
+        app:layout_constraintTop_toBottomOf="@+id/tv_studentMaxAge" />
+
+    <EditText
+        android:id="@+id/studentMinAge"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:layout_marginStart="10sp"
+        android:padding="5sp"
+        android:elevation="2sp"
+
+        android:background="@drawable/edit_text_bg"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_studentMinAge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/tv_studentMinAge" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25sp"
+        android:padding="10sp"
+
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/complete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentMinAge" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_studentMinAge,tv_studentMaxAge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
