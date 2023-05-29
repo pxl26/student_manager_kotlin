@@ -19,9 +19,6 @@ class StudentTranscriptAdapter(
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<StudentTranscriptAdapter.ViewHolder>() {
 
-    interface OnItemClickListener {
-        fun onItemClick(item: Student)
-    }
 
     class ViewHolder(private val binding: TranscriptItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(student: Student,
