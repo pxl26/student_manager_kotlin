@@ -1,7 +1,4 @@
-package com.udemy.studentmanagement.apdapter
-
-class StudentTranscriptAdapter {
-}package com.udemy.studentmanagement.adapter
+package com.udemy.studentmanagement.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
