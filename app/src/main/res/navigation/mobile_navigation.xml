@@ -47,9 +47,9 @@
 
 
     <fragment
-        android:id="@+id/nav_summary"
+        android:id="@+id/nav_summary_subject"
         android:name="com.udemy.studentmanagement.ui.summary.SummaryFragment"
-        android:label="@string/menu_summary"
+        android:label="@string/menu_summary_subject"
         tools:layout="@layout/fragment_summary" />
 
     <fragment
@@ -78,9 +78,11 @@
     </fragment>
 
 
-
-
-
+    <fragment
+        android:id="@+id/nav_summary"
+        android:name="com.udemy.studentmanagement.ui.summary.Summary2Fragment"
+        android:label="@string/menu_summary"
+        tools:layout="@layout/fragment_summary_2"/>
 
     <fragment
         android:id="@+id/nav_student"

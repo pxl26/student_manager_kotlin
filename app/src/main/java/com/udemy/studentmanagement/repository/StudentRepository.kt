@@ -1,15 +1,20 @@
 package com.udemy.studentmanagement.repository
 
+import com.udemy.studentmanagement.database.SettingFirebase
 import com.udemy.studentmanagement.database.StudentFirebase
+import com.udemy.studentmanagement.model.SearchResult
 import com.udemy.studentmanagement.model.Student
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.forEach
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-open class StudentRepository @Inject constructor(
+class StudentRepository @Inject constructor(
     private val studentFirebase : StudentFirebase,
 ) {
 
-    open fun getAllStudents() : Flow<ArrayList<Student>> {
+    fun getAllStudents() : Flow<ArrayList<Student>> {
         return studentFirebase.studentList
     }
 

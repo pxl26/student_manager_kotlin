@@ -1,16 +1,19 @@
 package com.udemy.studentmanagement.database
 
+import android.util.Log
 import androidx.core.net.toUri
-import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.udemy.studentmanagement.model.Student
 import com.udemy.studentmanagement.model.User
 import com.udemy.studentmanagement.util.FirebaseCollection
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 
 //This class acts as database for the whole application
@@ -159,4 +162,10 @@ object StudentFirebase {
         }
     }
 
+    fun resetFirebase() {
+        firebase = FirebaseFirestore.getInstance()
+            .collection(FirebaseCollection.User)
+            .document(User.id)
+            .collection(FirebaseCollection.Student)
+    }
 }

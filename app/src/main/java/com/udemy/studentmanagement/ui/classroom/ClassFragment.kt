@@ -4,14 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udemy.studentmanagement.R
 import com.udemy.studentmanagement.adapter.ClassAdapter
+import com.udemy.studentmanagement.adapter.StudentAdapter
+import com.udemy.studentmanagement.adapter.SwipeToRemove
 import com.udemy.studentmanagement.databinding.FragmentClassBinding
 import com.udemy.studentmanagement.model.Class
+import com.udemy.studentmanagement.model.Student
+import com.udemy.studentmanagement.ui.student.StudentViewModel
 
 class ClassFragment : Fragment() {
 

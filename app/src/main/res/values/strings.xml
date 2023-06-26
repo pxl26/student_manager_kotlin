@@ -9,7 +9,7 @@
 
     <string name="menu_class">Lớp học</string>
     <string name="menu_transcript">Bảng điểm</string>
-    <string name="menu_summary">Báo cáo tổng kết</string>
+    <string name="menu_summary">Tổng kết học kỳ</string>
     <string name="menu_setting">Quy định</string>
     <string name="search">Tìm kiếm</string>
     <string name="add_button">Add button</string>
@@ -61,4 +61,5 @@
     <string name="hint_name_login"><i><font size="16">Nhập tên của bạn</font></i></string>
     <string name="password">Mật khẩu</string>
     <string name="hint_password"><i><font size="16">Nhập mật khẩu của bạn</font></i></string>
+    <string name="menu_summary_subject">Tổng kết môn học</string>
 </resources>

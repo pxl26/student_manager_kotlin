@@ -12,7 +12,11 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udemy.studentmanagement.R
 import com.udemy.studentmanagement.adapter.ClassStudentAdapter
+import com.udemy.studentmanagement.adapter.StudentAdapter
+import com.udemy.studentmanagement.adapter.SwipeToRemove
+import com.udemy.studentmanagement.adapter.SwipeToRemoveStudentInClass
 import com.udemy.studentmanagement.databinding.FragmentClassInfoBinding
+import com.udemy.studentmanagement.model.Student
 import kotlinx.coroutines.launch
 
 class ClassInfoFragment : Fragment() {

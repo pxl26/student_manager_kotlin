@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isEmpty
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -17,6 +18,7 @@ import com.udemy.studentmanagement.R
 import com.udemy.studentmanagement.adapter.SpinnerAdapter
 import com.udemy.studentmanagement.databinding.AddstudentDialogBinding
 import com.udemy.studentmanagement.model.Student
+import com.udemy.studentmanagement.model.viewModel
 import com.udemy.studentmanagement.util.Constraint
 import kotlinx.coroutines.launch
 import java.util.*
@@ -104,22 +106,33 @@ class StudentDialog : BottomSheetDialogFragment() {
         }
 
         binding.addStudentComplete.setOnClickListener {
-            val student = getStudent()
-            // thêm học sinh mới vào database
-            lifecycleScope.launch {
-                //Nếu thêm học sinh mới vào database thành công thì sẽ tắt dialog
-                if (studentViewModel.addStudent(student)) {
-                    Toast.makeText(context,"Thêm học sinh thành công",Toast.LENGTH_SHORT).show()
-                    dismiss()
-                }
-                // Nếu không thành công, cho người dùng nhập lại
-                else {
-                    Toast.makeText(context,"Đã có lỗi xảy ra, vui lòng thử lại",
-                        Toast.LENGTH_SHORT).show()
+            if (checkEmptyField())
+                Toast.makeText(context, "Bạn không được bỏ trống bất kì thông tin nào", Toast.LENGTH_SHORT).show()
+            else {
+                val student = getStudent()
+                // thêm học sinh mới vào database
+                lifecycleScope.launch {
+                    //Nếu thêm học sinh mới vào database thành công thì sẽ tắt dialog
+                    if (studentViewModel.addStudent(student)) {
+                        Toast.makeText(context,"Thêm học sinh thành công",Toast.LENGTH_SHORT).show()
+                        dismiss()
+                    }
+                    // Nếu không thành công, cho người dùng nhập lại
+                    else {
+                        Toast.makeText(context,"Đã có lỗi xảy ra, vui lòng thử lại",
+                            Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
     }
+
+    private fun checkEmptyField() : Boolean {
+        return (binding.studentName.text.isEmpty() || binding.studentGender.isEmpty() ||
+                binding.studentEmail.text.isEmpty() || binding.studentAddress.text.isEmpty() ||
+                binding.studentBirthDate.text.isEmpty())
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

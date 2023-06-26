@@ -4,12 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.firestore.FirebaseFirestore
 import com.udemy.studentmanagement.model.Class
 import com.udemy.studentmanagement.model.Student
+import com.udemy.studentmanagement.model.User
+import com.udemy.studentmanagement.model.viewModel
 import com.udemy.studentmanagement.repository.ClassRepository
 import com.udemy.studentmanagement.util.Constraint
+import com.udemy.studentmanagement.util.FirebaseCollection
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 
@@ -36,12 +42,12 @@ class ClassViewModel @Inject constructor(
         _studentOfSelectedClass.postValue(ArrayList())
         // Lấy dữ liệu ban đầu để xây dựng UI
         viewModelScope.launch {
-            classRepository.getAllClasses().collect {
+            classRepository.getAllClasses().collect() {
                 _classList.postValue(it)
             }
         }
         viewModelScope.launch {
-            classRepository.getAllStudents().collect {
+            classRepository.getAllStudents().collect() {
                 _studentList = it
             }
         }

@@ -17,6 +17,10 @@
             android:icon="@drawable/baseline_description_24"
             android:title="@string/menu_transcript" />
         <item
+            android:id="@+id/nav_summary_subject"
+            android:icon="@drawable/baseline_folder_24"
+            android:title="@string/menu_summary_subject" />
+        <item
             android:id="@+id/nav_summary"
             android:icon="@drawable/baseline_folder_24"
             android:title="@string/menu_summary" />

@@ -2,6 +2,7 @@ package com.udemy.studentmanagement.util
 
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import com.udemy.studentmanagement.model.SettingResponse
 import com.udemy.studentmanagement.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
