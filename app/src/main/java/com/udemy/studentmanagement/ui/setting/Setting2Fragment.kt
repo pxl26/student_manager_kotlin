@@ -32,8 +32,10 @@ class Setting2Fragment : Fragment() {
 
         binding.classMaxSize.setText(Constraint.classMaxSize.toString())
 
+
         setUpDeleteSpinner()
         setUpSpinner(binding.classOldName, Constraint.NamesOfClass)
+        setUpNameChangeSpinner()
 
         return binding.root
     }
@@ -51,8 +53,6 @@ class Setting2Fragment : Fragment() {
                         binding.classNewName.text.toString().trim()
                     )) {
                     Toast.makeText(requireContext(),"Cập nhật thành công", Toast.LENGTH_SHORT).show()
-                    setUpSpinner(binding.deleteClass, Constraint.NamesOfClass)
-                    setUpSpinner(binding.classOldName, Constraint.NamesOfClass)
                 } else
                     Toast.makeText(requireContext(),"Đã xảy ra lỗi, vui lòng thử lại", Toast.LENGTH_SHORT).show()
             }
@@ -70,8 +70,16 @@ class Setting2Fragment : Fragment() {
         spinner.adapter =  adapter
     }
 
+    private fun setUpNameChangeSpinner() {
+        viewModel.classList.observe(viewLifecycleOwner) { data ->
+            val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, data)
+            adapter.setDropDownViewResource(R.layout.simple_spinner_item)
+            binding.classOldName.adapter = adapter
+        }
+    }
+
     private fun setUpDeleteSpinner() {
-        viewModel.subjectList.observe(viewLifecycleOwner) {
+        viewModel.classList.observe(viewLifecycleOwner) {
             it.add(0,"Không chọn")
             val adapter = ArrayAdapter(
                 requireContext(),
@@ -88,9 +96,7 @@ class Setting2Fragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    Log.i("SPINNER SELECTED ITEM", binding.deleteClass.selectedItem as String)
                     binding.deleteClass.setSelection(position)
-                    viewModel.deleteClassChosen(binding.deleteClass.selectedItem as String)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

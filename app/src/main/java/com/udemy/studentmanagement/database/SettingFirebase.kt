@@ -72,6 +72,7 @@ object SettingFirebase {
                 firebase.update("numberOfSubject", Constraint.NumberOfSubject)
             }
             if (deleteSubject.isNotEmpty()) {
+                Log.i("DELETE SUBJECT",deleteSubject)
                 firebase.update("namesOfSubject", FieldValue.arrayRemove(deleteSubject)).await()
                 Constraint.NumberOfSubject--
                 Constraint.NamesOfSubject.remove(deleteSubject)
@@ -97,13 +98,32 @@ object SettingFirebase {
             }
 
             val result = value?.get("namesOfSubject")
-            trySend(result as ArrayList<String>)
+            if (result != null)
+                trySend(result as ArrayList<String>)
         }
 
         awaitClose {
             listener.remove()
         }
     }
+
+    fun getAllClasses(): Flow<ArrayList<String>> = callbackFlow {
+        val listener = firebase.addSnapshotListener { value, error ->
+            if (error != null) {
+                cancel("Đã xảy ra lỗi, vui lòng khởi động lại ứng dụng", error)
+                return@addSnapshotListener
+            }
+
+            val result = value?.get("namesOfClass")
+            if (result != null)
+                trySend(result as ArrayList<String>)
+        }
+
+        awaitClose {
+            listener.remove()
+        }
+    }
+
 
     suspend fun setChangeForAdmissionScore(admissionScore: Double) : Boolean {
         return try {

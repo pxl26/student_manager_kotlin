@@ -64,7 +64,7 @@ class Setting3Fragment : Fragment() {
     }
 
     private fun setUpNameChangeSpinner() {
-        viewModel.withoutDeletedSubject.observe(viewLifecycleOwner) { data ->
+        viewModel.subjectList.observe(viewLifecycleOwner) { data ->
             val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, data)
             adapter.setDropDownViewResource(R.layout.simple_spinner_item)
             binding.subjectOldName.adapter = adapter
@@ -88,9 +88,7 @@ class Setting3Fragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    Log.i("SPINNER SELECTED ITEM", binding.deleteSubject.selectedItem as String)
                     binding.deleteSubject.setSelection(position)
-                    viewModel.deleteClassChosen(binding.deleteSubject.selectedItem as String)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {

@@ -27,6 +27,10 @@ class SettingRepository @Inject constructor(
         return settingFirebase.getAllSubject()
     }
 
+    fun getAllClass(): Flow<ArrayList<String>> {
+        return settingFirebase.getAllClasses()
+    }
+
     suspend fun setChangeForAdmissionScore(admissionScore: Double) : Boolean {
         return settingFirebase.setChangeForAdmissionScore(admissionScore)
     }
