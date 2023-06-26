@@ -1,10 +1,12 @@
 package com.udemy.studentmanagement.ui.setting
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
@@ -30,7 +32,7 @@ class Setting2Fragment : Fragment() {
 
         binding.classMaxSize.setText(Constraint.classMaxSize.toString())
 
-        setUpSpinner(binding.deleteClass, Constraint.NamesOfClass)
+        setUpDeleteSpinner()
         setUpSpinner(binding.classOldName, Constraint.NamesOfClass)
 
         return binding.root
@@ -66,5 +68,35 @@ class Setting2Fragment : Fragment() {
         val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item,data)
         adapter.setDropDownViewResource(R.layout.simple_spinner_item)
         spinner.adapter =  adapter
+    }
+
+    private fun setUpDeleteSpinner() {
+        viewModel.subjectList.observe(viewLifecycleOwner) {
+            it.add(0,"Không chọn")
+            val adapter = ArrayAdapter(
+                requireContext(),
+                R.layout.simple_spinner_item,
+                it
+            )
+            adapter.setDropDownViewResource(R.layout.simple_spinner_item)
+            binding.deleteClass.adapter = adapter
+            binding.deleteClass.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    Log.i("SPINNER SELECTED ITEM", binding.deleteClass.selectedItem as String)
+                    binding.deleteClass.setSelection(position)
+                    viewModel.deleteClassChosen(binding.deleteClass.selectedItem as String)
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    binding.deleteClass.setSelection(0)
+                }
+            }
+        }
     }
 }

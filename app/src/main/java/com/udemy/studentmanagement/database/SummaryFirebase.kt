@@ -52,7 +52,7 @@ object SummaryFirebase {
         return result
     }
 
-<<<<<<< HEAD
+
     suspend fun showRequestedSummary2(selectedSemester: String) : ArrayList<Summary> {
         val result = ArrayList<Summary>()
 
@@ -99,6 +99,4 @@ object SummaryFirebase {
         return result
     }
 
-=======
->>>>>>> d08a361983a202b11494aa736055de33aa07dbea
 }
