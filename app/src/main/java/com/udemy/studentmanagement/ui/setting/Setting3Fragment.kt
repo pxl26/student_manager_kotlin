@@ -73,7 +73,8 @@ class Setting3Fragment : Fragment() {
 
     private fun setUpDeleteSpinner() {
         viewModel.subjectList.observe(viewLifecycleOwner) {
-            it.add(0,"Không chọn")
+            if (!it.contains("Không chọn"))
+                it.add(0,"Không chọn")
             val adapter = ArrayAdapter(
                 requireContext(),
                 R.layout.simple_spinner_item,
